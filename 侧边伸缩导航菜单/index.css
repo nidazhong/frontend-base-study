@@ -51,9 +51,10 @@ body {
 */
 #main {
     /*动态计算出宽高，分别减去固定侧边和顶部区域*/
-    width: calc(100% - 70px) ;
-    height: calc(100% - 43px);
-    background-color: silver;
+    width: calc(100vw - 70px);
+    height: calc(100vh - 43px);
+    background-color: darkolivegreen;
+    /*固定定位*/
     position: fixed;
     top: 43px; /*左边导航宽43px*/
     left: 70px;/*顶部条宽是70px*/
@@ -65,11 +66,12 @@ body {
 
 /*测试*/
 #main  div{
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     border: 1px solid black;
     background-color: peru;
-    float: right;
+    /*float: right;*/
+    display: inline-block;
 }
 
 /*定义侧边导航的默认属性*/
@@ -170,6 +172,7 @@ body {
 /*当选中时main主体区域的变化*/
 
 .navbar input:checked ~ #main{
+    width: calc(100vw - 70px - 100px);
     left: 200px;
     /*margin-left: 200px;*/
 }
