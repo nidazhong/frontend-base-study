@@ -1,0 +1,57 @@
+* {
+    /*清除浏览器默认样式*/
+    padding: 0;
+    margin: 0;
+}
+
+.login {
+    /*登陆div的宽高*/
+    height: 350px;
+    width: 450px;
+    background-color: darkcyan;
+    /*定位,屏幕居中*/
+    position: absolute;
+    top: calc((100vh - 350px) / 2);
+    left: calc((100vw - 450px) / 2);
+}
+
+.login form {
+    /*display: none;*/
+}
+
+/*Login 文字*/
+.login form p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    /*文字大小*/
+    font-size: 40px;
+    /*文字居中*/
+    text-align: center;
+}
+
+
+.login > form > label {
+    display: block;
+    margin-left: 75px;
+}
+
+/*账号输入框*/
+.login > form > label input {
+    margin-top: 10px;
+    height: 30px;
+    width: 180px;
+}
+
+/*登陆按钮*/
+.login_btn {
+    display: block;
+    width: 80px;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: 185px;
+}
+
+
+
+
+
