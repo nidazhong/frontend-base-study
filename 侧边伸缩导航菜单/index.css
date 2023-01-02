@@ -1,0 +1,205 @@
+* {
+    /*清除浏览器默认样式*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*溢出隐藏*/
+    /*overflow: hidden;*/
+}
+
+.navbar {
+    /*相对定位*/
+    /*position: relative;*/
+    /*100%的窗口宽度*/
+    width: 100vw;
+    background-color: beige;
+}
+
+#checkbox {
+    /*隐藏复选框*/
+    display: none;
+}
+
+/*顶部区域*/
+.navbar label {
+    /*label是行级元素*/
+
+    /*固定定位，顶部栏不动*/
+    position: fixed;
+    top: 0;
+    left: 70px;
+
+    /*100%的窗口宽度*/
+    width: 100vw;
+    height: 43px;
+    font-size: 30px;
+    color: #5a738e;
+    background-color: #ededed;;
+    padding-left: 20px;
+    border: 1px solid #d9dee4;
+    /*鼠标放上去变手型*/
+    cursor: pointer;
+    /*加上动画过渡*/
+    transition: all 0.5s;
+}
+
+
+/*
+主体内容区域
+*/
+#main {
+    /*动态计算出宽高，分别减去固定侧边和顶部区域*/
+    width: calc(100% - 70px) ;
+    height: calc(100% - 43px);
+    background-color: silver;
+    position: fixed;
+    top: 43px; /*左边导航宽43px*/
+    left: 70px;/*顶部条宽是70px*/
+
+    /*大小改变时的滑动*/
+    transition: all 0.5s;
+    overflow: auto;
+}
+
+/*测试*/
+#main  div{
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: peru;
+    float: right;
+}
+
+/*定义侧边导航的默认属性*/
+.navbar ul {
+    /*固定定位，侧边导航栏不动*/
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /*列表属性清除*/
+    list-style: none;
+    /*导航宽70px*/
+    width: 70px;
+    /*100%的窗口高度*/
+    height: 100vh;
+    background-color: #2a3f54;
+    transition: all 0.5s;
+    /*溢出隐藏*/
+}
+
+.navbar ul li {
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+
+.navbar ul li:first-child {
+    /*弹性布局*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+/*头像*/
+.navbar ul li:first-child img {
+    width: 50px;
+    height: 50px;
+    /*变圆型头像*/
+    border-radius: 50%;
+}
+
+.navbar ul li:first-child span {
+    color: #fff;
+    /*文字禁止换行*/
+    white-space: nowrap;
+    padding-left: 10px;
+    /*先把文字隐藏*/
+    display: none;
+}
+
+.navbar ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*垂直排列*/
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: #d1d1d1;
+    /*去掉下划线*/
+    text-decoration: none;
+}
+
+.navbar ul li a i {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.navbar ul li a span {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/*鼠标移入变色*/
+.navbar ul li a:hover {
+    color: #fff;
+    background-color: #35495d;
+}
+
+
+/*当被label选中时侧边导航变宽为200px*/
+/* :checked选择器是判断复选框是否被选中 */
+/* +是相邻兄弟选择器，找到input的下一个兄弟label */
+.navbar input:checked + label {
+    /*label距离左边200px*/
+    left: 200px;
+}
+
+/* ~也是兄弟选择器，但它可以找到隔了几代的兄弟 */
+/*效果就是再次点击菜单变宽*/
+.navbar input:checked ~ ul {
+    /*所有当ul宽度变200px*/
+    width: 200px;
+}
+
+/*当选中时main主体区域的变化*/
+
+.navbar input:checked ~ #main{
+    left: 200px;
+    /*margin-left: 200px;*/
+}
+
+
+
+/*当被选中时的变化*/
+
+.navbar input:checked ~ ul li:first-child {
+    /*将居中改为开头对齐*/
+    justify-content: flex-start;
+}
+
+
+.navbar input:checked ~ ul li:first-child span {
+    /* 文字显示（欢迎你，管理员） */
+    display: block;
+}
+
+
+.navbar input:checked ~ ul li a {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.navbar input:checked ~ ul li a i {
+    font-size: 18px;
+    margin: 0 15px 0 30px;
+}
+
+.navbar input:checked ~ ul li a span {
+    font-size: 14px;
+}

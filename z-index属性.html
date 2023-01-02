@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index（只支持定位元素,定位元素显示顺序）</title>
+    <style>
+      #one {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        z-index: 1; /*堆叠 黄上红下-》红上黄下*/
+      }
+      #two {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        position: absolute;
+        top: 150px;
+        left: 150px;
+        z-index: 1; /*同一层还是按照元素本身点排序顺序堆叠*/
+      }
+    </style>
+</head>
+<body>
+  <div id="one"></div>
+  <div id="two"></div>
+</body>
+</html>

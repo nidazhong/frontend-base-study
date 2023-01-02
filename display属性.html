@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display属性</title>
+    <style>
+        /*
+        每一个网页元素都有一个 display 属性，用于确定该元素的类型，每一个元素都有默认的 display 属性值
+        display常见属性值:
+          1.none：隐藏对象
+          2.inline：指定对象为内联元素
+          3.block：指定对象为块元素
+          4.inline-block: 指定对象为内联块元素
+          5.table-cell: 指定对象作为表格单元格
+          6.flex：弹性盒
+
+          visibility:hidden 和 opacity:0 会将元素隐藏，但是物理空间实际存在
+          display:none：隐藏元素，不保留物理空间
+          opacity:0 属性表示元素透明度
+        */
+        div, span {
+            width: 200px;
+            height: 200px;
+        }
+
+        div {
+            /*设置为行内元素*/
+            /*display: inline;*/
+            /*行内块元素，既有宽高又不会独占一行， inline-block使用场景较少*/
+            /*display: inline-block;*/
+            /*display: table-cell;*/
+            background-color: red;
+            /*隐藏元素*/
+            /*display: none;*/
+            /*重线显示*/
+            /*display: block;*/
+            /*也可以隐藏，但还是占有位置*/
+            /*visibility: hidden;*/
+            /*visibility = visible让元素显示（动态隐藏显示）*/
+            /*visibility: visible;*/
+            /*属性表示元素透明度*/
+            opacity:0.3
+        }
+
+        span{
+            /*设置为块状元素*/
+            /*display: block;*/
+            background-color: fuchsia;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--div：块状元素：具有宽高属性，并且独占一行-->
+<div>我是块状元素</div>
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+<!--<div>我是块状元素</div>-->
+
+
+<!--行内元素：没有宽高属性，不会独占一行-->
+<span>我是行内元素</span>
+</body>
+</html>

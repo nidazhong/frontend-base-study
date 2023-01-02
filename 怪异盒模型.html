@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>怪异盒模型</title>
+    <style>
+        #box {
+            /*默认是标准盒模型*/
+            height: 400px;
+            width: 400px;
+            background-color: red;
+            border: 5px solid black;
+            /*怪异盒（padding 和border 被包含在定义的width和height中，盒子会缩小）
+            元素的实际大小是你定义了多宽就是多宽*/
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="box">
+</div>
+</body>
+

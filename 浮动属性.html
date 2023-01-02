@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动属性</title>
+    <!--
+    1、将元素排除在普通流之外
+    2、元素将不在页面中占据空间()
+    3、将浮动元素放置在包含框的左边或者右边
+    4、浮动元素依旧位于父类包含框之内
+    6、浮动的框可以向左或者向右移动，直到他的外边缘碰到包含框或另一个浮动框的边框为止
+    7、浮动元素的外边缘不会超过其父元素的内边缘
+    8、浮动元素不会互相重叠
+    9、浮动元素不会上下浮动【只能设置左右浮动】
+    10、任何元素一旦浮动，display 属性将完全失效均可以设置宽高，并且不会独占一行
+    -->
+
+    <style>
+      #box {
+
+        /*width: 600px;*/
+        /*height: 600px;*/
+        background-color: black;
+        /*在不设置父类宽高的情况下，让父类可以感知子类的高度*/
+        /*方式1 overflow 属于清除浮动的一种*/
+        /*overflow: hidden;*/
+        /*方式2 父类也浮动*/
+        float: right;
+      }
+
+      #box>div:first-child {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        float: right;
+      }
+
+      #box>div:nth-child(2) {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        float: right;
+      }
+
+
+      #box>div:nth-child(3) {
+        /*原有空间不够的情况下会换行*/
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        float: right;
+      }
+
+      #box>div:last-child {
+        width: 400px;
+        height: 400px;
+        background-color: darkmagenta;
+        /*clear: both; !*清除两边浮动, 抵消其他元素对当前元素对影响*!*/
+        float: left;
+      }
+
+      /*span {*/
+      /*  !*行内元素：没有宽高属性，并且不会独占一行*!*/
+      /*  background-color: red;*/
+      /*  width: 200px;*/
+      /*  height: 200px;*/
+      /*  float: left;*/
+      /*}*/
+    </style>
+</head>
+<body>
+  <div id = "box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+  <!--行内元素：没有宽高属性，并且不会独占一行-->
+  <!--<span>-->
+  <!--  我是span内容1-->
+  <!--</span>-->
+  <!--<span>-->
+  <!--  我是span内容2-->
+  <!--</span>-->
+  <!--<span>-->
+  <!--  我是span内容3-->
+  <!--</span>-->
+  <!--<span>-->
+  <!--  我是span内容4-->
+  <!--</span>-->
+  <!--<span>-->
+  <!--  我是span内容5-->
+  <!--</span>-->
+</body>
+</html>

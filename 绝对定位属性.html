@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位属性</title>
+   <style>
+     div {
+       width: 200px;
+       height: 200px;
+
+     }
+
+     #box1 {
+       background-color: red;
+     }
+
+     #box2 {
+         width: 500px;
+         height: 500px;
+         /**
+         1、绝对定位不会占有原有的位置,定位起始点(0.0)
+         以其他元素作为参考点
+         2、如果元素的外层元素是非 static(有了除默认值之外的定位设置)那么这个外层元素就成为该元素的定位参考点
+         3、如果该元素的外层元素没有任何一个元素采用 position 定位，那么此时定位参考元素变为 body 或者说页面
+          */
+       background-color: green;
+         border: 1px solid black;
+         /*position: absolute;*/
+         /*top:200px; !*定位点*!*/
+         /*left:200px; !*定位点*!*/
+         position: relative;
+
+
+     }
+
+     #father {
+         width: 200px;
+         height: 200px;
+         background-color: aquamarine;
+         /*父相对，子绝对，那么子会以父类作为起始点，不在以00作为起始点*/
+         /*position: relative;*/
+         margin: 20px;
+         /*border: 3px solid black;*/
+     }
+
+     #son{
+         width: 100px;
+         height: 100px;
+         background-color: fuchsia;
+         /*父子关系嵌套层，谁有position：relative找谁为起始点， 没有找00点*/
+         position: absolute;
+         top: 100px;
+         left: 100px;
+     }
+
+
+     #box3 {
+       background-color: blue;
+     }
+   </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2" >
+        <div id="father">
+            father
+            <div id="son">son</div>
+        </div>
+    </div>
+    <div id="box3"></div>
+</body>
+</html>

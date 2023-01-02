@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+        #box {
+            height: 620px;
+            width: 620px;
+            background-color: black;
+        }
+
+        /*顶部元素*/
+        #box > div:nth-child(1) {
+            height: 200px;
+            width: 600px; /* 如果第一个元素左浮动后占据父亲的全部宽度（父亲宽度剩余不够了）, 所以只能显示在下一行*/
+            background-color: dimgray;
+            float: left;
+        }
+
+        /*左侧元素*/
+        #box > div:nth-child(2) {
+            height: 200px;
+            width: 200px;
+            background-color: forestgreen;
+            float: left;
+        }
+
+        /*当前元素*/
+        #box > div:nth-child(3) {
+            height: 200px;
+            width: 200px;
+            background-color: olive;
+            float: left;
+            margin: 10px; /*距离其他元素 上下左右10px*/
+        }
+
+        /*右侧元素*/
+        #box > div:nth-child(4) {
+            height: 200px;
+            width: 200px;
+            background-color: saddlebrown;
+            float: left;
+        }
+
+        /*底部元素*/
+        #box > div:nth-child(5) {
+            height: 200px;
+            width: 600px;
+            background-color: slateblue;
+            float: left;
+        }
+
+
+        #block {
+            height: 50px;
+            width: 1200px;
+            background-color: tomato;
+            /*margin: 0 auto!*可设置块状元素居中(水平剧中)*!*/
+            margin: 10px auto /*可设置块状元素居中(水平剧中)*/
+        }
+
+        /*外间距合并问题 (上下会合并（找最大值），左右不会)*/
+        #box1 {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            /*margin-top: -100px; !*往上移动100px*!*/
+            margin-bottom: 100px;
+        }
+
+        #box2 {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            margin-top: 50px;
+        }
+
+        /*<包含式外间距合并*/
+        #father{
+            height: 200px;
+            width: 500px;
+            /*加一像素线， 实线边框*/
+            border: 1px solid red;
+            background-color: green;
+        }
+
+        #son {
+            height: 100px;
+            width: 200px;
+            background-color: pink;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>
+            顶部元素
+        </div>
+        <div>
+            左侧元素
+        </div>
+        <div id="self">
+            当前元素
+        </div>
+        <div>
+            右侧元素
+        </div>
+        <div>
+            底部元素
+        </div>
+    </div>
+    <!--可设置块状元素居中-->
+    <div id="block">块状元素居中</div>
+    <!--外间距合并-->
+    <div id="box1">外间距合并</div>
+    <div id="box2">外间距合并</div>
+    <!--包含式外间距合并-->
+    <div id="father">
+        <div id="son">son</div>
+    </div>
+
+</body>
+
+</html>
