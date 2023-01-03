@@ -28,18 +28,22 @@
     /*文字居中*/
     text-align: center;
 }
-
+.login > form span {
+    height: 30px;
+    width: 90px;
+}
 
 .login > form > label {
-    display: block;
+    margin-top: 10px;
     margin-left: 75px;
+    display: inline-block;
 }
 
 /*账号输入框*/
-.login > form > label input {
-    margin-top: 10px;
+.login > form > label > input {
     height: 30px;
     width: 180px;
+    float: right;
 }
 
 /*登陆按钮*/
