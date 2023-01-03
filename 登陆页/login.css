@@ -15,9 +15,6 @@
     left: calc((100vw - 450px) / 2);
 }
 
-.login form {
-    /*display: none;*/
-}
 
 /*Login 文字*/
 .login form p {
