@@ -1,0 +1,9 @@
+.clearfix() {
+  // 子元素开启浮动，父元素塌陷问题，overflow：hidden
+  &::after{
+    //
+    clear: both;
+    display: block;
+    content: '';
+  }
+}

@@ -1,0 +1,270 @@
+@import "mixins/clear.less";
+// 最外层的包裹元素
+#wrapper {
+  // 头部开始
+  #header {
+    // 头部上半部分
+    .headTop {
+      background-color: #eaeaea;
+      height: 30px;
+      // 上半部分版心元素
+      .headTopMain {
+        width: 1200px;
+        line-height: 30px;
+        margin: 0 auto;
+        .clearfix();
+        // 左侧
+        .left {
+          float: left;
+          margin-right: 5px;
+
+          h5 {
+            float: left;
+          }
+
+          p {
+            float: left;
+
+            a {
+              &:first-child {
+                margin-left: 5px;
+                border-right: 1px solid #b3aeae;
+                padding-right: 5px;
+              }
+            }
+          }
+        }
+
+        // 右侧
+        .right {
+          float: right;
+
+          nav {
+            // a标签会有默认的font-size
+            font-size: 0;
+
+            a {
+              font-size: 12px;
+              margin-right: 10px;
+              padding-right: 10px;
+              border-right: 1px solid #b3aeae;
+
+              &:last-child {
+                border: none;
+                margin-left: 0;
+                margin-right: 0;
+
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    // 头部下半部分
+    .headBottom {
+      // 版心元素
+      .headBottomMain {
+        width: 1200px;
+        margin: 0 auto;
+        .clearfix();
+        .logo {
+          float: left;
+
+          a {
+            img {
+              width: 175px;
+              height: 56px;
+              margin: 25px 45px;
+            }
+          }
+        }
+
+        .search {
+          float: right;
+          margin-top: 35px;
+
+          input {
+            // 文本框
+            &:first-child {
+              box-sizing: border-box;
+              width: 490px;
+              height: 32px;
+              padding: 0 4px;
+              border: 3px solid #ea4a36;
+              float: left;
+            }
+
+            // 提交按钮
+            &:last-child {
+              width: 68px;
+              height: 32px;
+              color: #fff;
+              background: #ea4a36;
+              border: none;
+            }
+
+            // 修饰placeholder
+            &::-webkit-input-placeholder {
+              color: yellowgreen;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  // 头部结束
+
+  // 分类导航开始
+  #navWarp {
+    border-bottom: 2px solid #e1251b;
+
+    .navWarpMain {
+      width: 1200px;
+      margin: 0 auto;
+      // 子元素浮动，父元素塌陷问题解决
+      .clearfix();
+      a {
+        margin: 0 22px;
+        font-size: 16px;
+        color: #333;
+        float: left;
+        line-height: 50px;
+        &:first-child {
+          width: 210px;
+          height: 50px;
+          background: #e1251b;
+          color: #fff;
+          font-size: 14px;
+          font-weight: bold;
+          float: left;
+          text-align: center;
+          line-height: 50px;
+        }
+      }
+
+    }
+  }
+  // 分类导航结束
+
+  // 内容区域开始
+  #content {
+    // 版心元素
+    .contentMain {
+      width: 1200px;
+      margin: 15px auto 0 auto ;
+      #navPath {
+        padding: 9px 15px 9px 0;
+        a {
+          font-size: 12px;
+        }
+        i {
+          padding: 0 5px;
+          font-size: 12px;
+        }
+      }
+
+      // 中间区域开始
+      #center {
+        margin: 5px 0 15px;
+        // 左侧放大镜开始
+        #left {
+          width: 400px;
+          float: left;
+          // 上面
+          #leftTop {
+            width: 400px;
+            position: relative;
+            // 小图框
+            #smallPic {
+              width: 400px;
+              height: 400px;
+              border: 1px solid #dfdfdf;
+              position: relative;
+              img {
+
+              }
+              // 蒙版元素
+              #mask {
+                width: 200px;
+                height: 200px;
+                background: rgba(255, 255, 255, .5);
+                border: 1px solid #ddd;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+            }
+            // 大图框
+            #bigPic {
+              width: 400px;
+              height: 400px;
+              border: 1px solid #ddd;
+              left: 420px;
+              top: 0;
+              position: absolute;
+              overflow: hidden;// 溢出隐藏
+              // 大图片
+              img {
+                width: 800px;
+                height: 800px;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+            }
+          }
+          // 下面
+          #leftBottom {
+            width: 400px;
+            margin-top: 5px;
+            a{
+              width: 10px;
+              height: 54px;
+              border: 1px solid #ccc;
+              background: #ebebeb;
+              text-align: center;
+              line-height: 54px;
+              float: left;
+              &:first-child{
+                margin-right: 4px;
+              }
+            }
+            #picList {
+              width: 372px;
+              height: 56px;
+              float: left;
+              overflow: hidden;
+              position: relative;
+              ul {
+                white-space: nowrap;
+                //font-size: 0;
+                position: absolute;
+                left: 0;
+                transition: 0.5s; // 动画过渡
+                li {
+                  width: 50px;
+                  height: 50px;
+                  border: 1px solid #ccc;
+                  padding: 2px;
+                  margin-right: 20px;
+                  display: inline-block;
+                  img{
+                    width: 50px;
+                    height: 50px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      // 中间区域结束
+    }
+  }
+  // 内容区域结束
+
+
+}
