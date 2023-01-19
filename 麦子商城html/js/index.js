@@ -213,4 +213,54 @@ window.onload = function () {
             ul.style.left = -start + "px";
         }
     }
+
+
+    //商品详情数据的动态渲染
+    rightTopData();
+    function rightTopData(){
+
+        //1.查找元素
+        var rightTop = document.querySelector('#wrapper #content .contentMain #center #right .rightTop');
+
+        //2.查找数据
+        var goodsDetail =goodData.goodsDetail;
+
+        //3.生成模板
+        var s = `<h3>${goodsDetail.title}</h3>
+                 <p>${goodsDetail.recommend}</p>
+                 <div class="priceWrap">
+                        <div class="priceTop">
+                            <span>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</span>
+                            <div class="price">
+                                <span>￥</span>
+                                <p>${goodsDetail.price}</p>
+                                <i>降价通知</i>
+                            </div>
+                            <p>
+                                <span>累计评价</span>
+                                <span>${goodsDetail.evaluateNum}</span>
+                            </p>
+                 </div>
+                 <div class="priceBottom">
+                        <span>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</span>
+                        <p>
+                            <span>${goodsDetail.promoteSales.type}</span>
+                            <span>${goodsDetail.promoteSales.content}</span>
+                        </p>
+                    </div>
+                 </div>
+                 <div class="support">
+                    <span>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</span>
+                    <p>${goodsDetail.support}</p>
+                 </div>
+                 <div class="address">
+                    <span>配&nbsp;送&nbsp;至</span>
+                    <p>${goodsDetail.address}</p>
+                 </div>`;
+        //4.重新渲染rightTop元素
+        rightTop.innerHTML = s;
+    }
+
+
+
 }
