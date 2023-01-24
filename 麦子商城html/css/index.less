@@ -283,7 +283,7 @@
         #right {
           width: 700px;
           float: right;
-
+          // 上面
           .rightTop {
             h3 {
               font-size: 14px;
@@ -336,7 +336,6 @@
                 // 累计评价
                 > p {
                   float: right;
-
                   > span {
                   }
                 }
@@ -385,9 +384,11 @@
             }
 
             .address {
+              border-bottom: 1px solid #ededed;
               padding-bottom: 5px;
               line-height: 28px;
               margin-top: 10px;
+              .clearfix();
               > span {
                 margin-right: 15px;
                 float: left;
@@ -396,6 +397,40 @@
               > p {
                 float: left;
                 color: #999;
+              }
+            }
+          }
+
+          // 下面
+          .rightBottom {
+            margin-top: 10px;
+            line-height: 28px;
+            // 商品参数的选择区域开始
+            .chooseWrap {
+              dl {
+                margin-top: 13px;
+                margin-bottom: 13px;
+                .clearfix();
+                dt{
+                  margin-right: 15px;
+                  float: left;
+                }
+                dd{
+                  float: left;
+                  margin-right: 5px;
+                  color: #666;
+                  line-height: 24px;
+                  padding: 2px 14px;
+                  border-top: 1px solid #eee;
+                  border-left: 1px solid #eee;
+                  border-right: 1px solid #bbb;
+                  border-bottom: 1px solid #bbb;
+
+                  &:first-of-type {
+                    color: red;
+                  }
+                }
+
               }
             }
           }
