@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /**
+            子代选择器: 只作用父类的第一层
+            后代选择器: 父类下的所有层
+
+            多个类名并列是叠加作用，且的关系&
+            并列/并集选择器：英文逗号
+
+            伪类选择器：
+            链接伪类选择器：
+            focus伪类选择器：
+            复合选择器总结：
+         */
+
+        /*后代选择器，.parent下的所有p标签*/
+        .box1 .parent p{
+            color: red;
+        }
+
+        /*子选择器*/
+        .box2 .parent>p{
+            color: red; /*不会生效，因为.parent紧跟着的一层没有p标签*/
+        }
+
+        .box2 .son1>p{
+            color: green;
+        }
+
+        /*兄弟元素（所选元素的弟弟）*/
+        .box2 .parent .son1+div p{
+            color: orange;
+        }
+
+        /*并列选择器*/
+        .box1,.box2 {
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="parent">
+        <div class="son1">
+            <p>子代</p>
+            <div>
+                <p>孙代</p>
+                <div>
+                    <p>曾孙</p>
+                </div>
+            </div>
+        </div>
+        <div class="son2">
+            <P>兄弟</P>
+        </div>
+    </div>
+</div>
+<div class="box2">
+    <div class="parent">
+        <div class="son1">
+            <p>子代</p>
+            <div>
+                <p>孙代</p>
+                <div>
+                    <p>曾孙</p>
+                </div>
+            </div>
+        </div>
+        <div class="son2">
+            <P>兄弟1</P>
+        </div>
+        <div class="son3">
+            <P>兄弟2</P>
+        </div>
+    </div>
+</div>
+</body>
+</html>
