@@ -16,7 +16,7 @@
 
      #box2 {
        background-color: green;
-       /*相对定位（相对于自己定位）*/
+       /*相对定位（相对于原来自己的定位，如果原来左上角的位置是top:200 left:0, 相对定位后变成top:400  left:200*/
        /*一旦移除，原来的位置的还在（copy）*/
        position: relative;
        top: 200px;
@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="box1"></div>
-    <div id="box2"></div>
+    <div id="box2">相对定位</div>
     <div id="box3"></div>
 </body>
 </html>
