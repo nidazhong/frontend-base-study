@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container vs Grid</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+  <style>
+    div { background: #f0f0f0; padding: 1rem; margin: 0.5rem 0; }
+  </style>
+</head>
+<body>
+
+<h2>只有 .grid (全宽)</h2>
+<div class="grid">
+  <div>列 1</div>
+  <div>列 2</div>
+  <div>列 3</div>
+</div>
+
+<h2>.container + .grid (居中)</h2>
+<div class="container">
+  <div class="grid">
+    <div>列 1</div>
+    <div>列 2</div>
+    <div>列 3</div>
+  </div>
+</div>
+
+<h2>直接在 .container 内使用网格</h2>
+<div class="container">
+  <div>自动成为网格列 1</div>
+  <div>自动成为网格列 2</div>
+  <div>自动成为网格列 3</div>
+</div>
+
+</body>
+</html>

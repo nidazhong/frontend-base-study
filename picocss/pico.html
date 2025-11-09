@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="pico.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
+    <style>
+        #app-contain {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /*#login-card {*/
+            /*    height: 450px;*/
+            /*    width: 700px;*/
+
+
+
+            /*    label {*/
+            /*        width: 400px;*/
+            /*        !*float: left;*!*/
+            /*    }*/
+
+            /*    input {*/
+            /*        width: 300px;*/
+            /*        !*float: right;*!*/
+            /*        !*margin-right: 80px;*!*/
+            /*    }*/
+            /*}*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app-contain">
+        <div id="login-card" class="grid">
+            <fieldset>
+                <legend>个人信息：</legend>
+                <label for="fname">名字：</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">姓氏：</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday"><br><br>
+                <input type="submit" value="提交">
+            </fieldset>
+        </div>
+    </div>
+
+</body>
+</html>
