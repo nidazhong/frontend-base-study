@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI聊天框</title>
+    <link rel="stylesheet" href="../第三方css/pico.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh; /*body默认是block，没有高度*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #login {
+            width: 550px;
+            height: 400px;
+            margin-bottom: 0;
+            /*text-align: center;*/
+        }
+
+        #login .user-div input, .pwd-div  input {
+            width: 350px;
+            height: 60px;
+        }
+
+        .user-div, .pwd-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        label {
+            width: 100px;
+        }
+
+        .btn-area {
+            text-align: center; /*block布局居中方式*/
+        }
+
+        .login-btn {
+            width: 350px;
+            height: 60px;
+            margin-top: 20px;
+            margin-left: 40px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <article id="login">
+        <h1>Sign in</h1>
+        <div class="user-div">
+            <label for="username">用户名</label>
+            <input id="username"/>
+        </div>
+        <div class="pwd-div">
+            <label for="pwd">密码</label>
+            <input id="pwd" type="password"/>
+        </div>
+        <div class="btn-area">
+            <input name="terms" type="checkbox" role="switch" />
+            <button class="login-btn">登录</button>
+        </div>
+    </article>
+</body>
+</html>

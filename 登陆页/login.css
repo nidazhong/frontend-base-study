@@ -31,9 +31,15 @@
 }
 
 .login > form > label {
+
     margin-top: 10px;
     margin-left: 75px;
     display: inline-block;
+}
+
+.login span {
+    display: inline-block; /* 将span变成行内块*/
+    width: 70px;
 }
 
 /*账号输入框*/
