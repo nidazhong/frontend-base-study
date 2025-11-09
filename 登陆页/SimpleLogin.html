@@ -3,55 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>AI聊天框</title>
-    <link rel="stylesheet" href="../第三方css/pico.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="../第三方库/pico.min.css">
 
-        body {
-            height: 100vh; /*body默认是block，没有高度*/
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #login {
-            width: 550px;
-            height: 400px;
-            margin-bottom: 0;
-            /*text-align: center;*/
-        }
-
-        #login .user-div input, .pwd-div  input {
-            width: 350px;
-            height: 60px;
-        }
-
-        .user-div, .pwd-div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        label {
-            width: 100px;
-        }
-
-        .btn-area {
-            text-align: center; /*block布局居中方式*/
-        }
-
-        .login-btn {
-            width: 350px;
-            height: 60px;
-            margin-top: 20px;
-            margin-left: 40px;
-
-        }
-
-    </style>
 </head>
 <body>
     <article id="login">
@@ -70,4 +23,54 @@
         </div>
     </article>
 </body>
+<style  type="text/less">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    height: 100vh; /*body默认是block，没有高度*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #login {
+    width: 550px;
+    height: 400px;
+    margin-bottom: 0;
+    /*text-align: center;*/
+
+    .user-div input, .pwd-div  input {
+      width: 350px;
+      height: 60px;
+    }
+  }
+
+
+  .user-div, .pwd-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    width: 100px;
+  }
+
+  .btn-area {
+    text-align: center; /*block布局居中方式*/
+  }
+
+  .login-btn {
+    width: 350px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 40px;
+
+  }
+</style>
+<!--必须放最后 开发时运行时编译，生产时候要使用预编译-->
+<script src="../第三方库/less.min.js"></script>
 </html>
